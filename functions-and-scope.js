@@ -132,3 +132,5 @@ averageRoundedGrade([8, 9, 4, 6, 10]);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+//OEPS VERGETEN OP EEN BRANCH TE WERKEN... ZUCHT
