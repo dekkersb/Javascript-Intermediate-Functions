@@ -16,6 +16,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6
 
+function checkGrades(){
+    let cumLaudes = [];
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] >= 8) {
+            cumLaudes.push(grades[i]);
+        }
+    }
+return console.log(cumLaudes.length);
+}
+
+checkGrades();
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
@@ -27,8 +38,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-
-
+function cumLaude(cijfers){
+    let cumLaudeCijfers = [];
+    for (let i = 0; i < cijfers.length; i++) {
+        if (cijfers[i] >= 8) {
+            cumLaudeCijfers.push(cijfers[i]);
+        }
+    }
+    return console.log(cumLaudeCijfers.length);
+}
+cumLaude(grades);
+cumLaude([6, 5, 5]);
+cumLaude([8, 9, 4, 6, 10]);
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -42,6 +63,16 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+//gemiddelde is aantal cijfers bij elkaar optellen en delen door het aantal cijfers.
+//alle cijfers uit de array optellen en delen door de array length.
+
+function averageGrade(cijfers) {
+    const sum = cijfers.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    return console.log(sum/cijfers.length);
+}
+averageGrade(grades);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -53,13 +84,32 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+function averageGrades(cijfers) {
+    const sum = cijfers.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    return console.log(sum/cijfers.length);
+}
+averageGrades(grades);
+averageGrades([6, 4, 5]);
+averageGrades([8, 9, 4, 6, 10]);
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-
-
+function averageRoundedGrade(cijfers) {
+    const sum = cijfers.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    averageGrades = sum/cijfers.length;
+    console.log("Dit is het gemiddelde: ", averageGrades);
+    roundedAverage = Math.round(averageGrades * 100) / 100;
+    console.log("Dit is afgerond!: ", roundedAverage);
+}
+averageRoundedGrade(grades);
+averageRoundedGrade([6, 4, 5]);
+averageRoundedGrade([8, 9, 4, 6, 10]);
 
 /* Bonusopdracht: hoogste cijfer */
 
