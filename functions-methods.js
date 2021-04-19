@@ -9,7 +9,18 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain(emailAdress) {
+    const domainName = emailAdress.split("@");
+    return console.log(domainName[1]) ;
+}
 
+getEmailDomain("t.mellink@novi.nl");
+getEmailDomain("n.eeken@novi-education.nl");
+getEmailDomain("a.wiersma@outlook.com");
+
+/*const emailAdress = ("t.mellink@novi.nl");
+const mailAdress = emailAdress.split("@");
+console.log(mailAdress[1]);*/
 
 
 /* Opdracht  2 */
@@ -20,6 +31,23 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+function typeOfEmail(emailAdress) {
+    const domainName = emailAdress.split("@");
+    let typeOfEmail = domainName[1];
+    if (typeOfEmail.includes("novi.")) {
+        console.log("Medewerker");
+        return;
+    } if (typeOfEmail.includes("novi-education")) {
+        console.log("Student")
+    } else {
+        console.log("Extern")
+    }
+}
+
+typeOfEmail("n.eeken@novi-education.nl");
+typeOfEmail("t.mellink@novi.nl");
+typeOfEmail("novi.nlaapjesk@outlook.com");
+typeOfEmail("a.wiersma@outlook.com");
 
 
 /* Opdracht  3 */
@@ -34,3 +62,14 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailAdress) {
+    const mailAdress = (emailAdress.includes("@") && !emailAdress.includes(",") && (emailAdress.lastIndexOf(".") != emailAdress.length-1));
+    return console.log(mailAdress);
+}
+
+checkEmailValidity("n.eeken@novi.nl")
+checkEmailValidity("tessmellink@novi.nl")
+checkEmailValidity("n.eekenanovi.nl")
+checkEmailValidity("n.eeken@novinl.")
+checkEmailValidity("tessmellink@novi,nl")
